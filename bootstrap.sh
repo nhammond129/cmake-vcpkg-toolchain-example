@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # cwd=`pwd`
-# pull submodules
+# git submodule update --init
 # cd $cwd/build
 # cmake ..
 # cmake --build .

@@ -1,3 +1,4 @@
+#define SDL_MAIN_HANDLED  // Use this function to circumvent failure of SDL_Init() when not using SDL_main() as an entry point.
 #include <SDL2/SDL.h>
 #include <iostream>
 
@@ -42,4 +43,6 @@ int main() {
 	if (renderer) SDL_DestroyRenderer(renderer);
 	if (window) SDL_DestroyWindow(window);
 	SDL_Quit();
+
+	return 0;
 }

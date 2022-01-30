@@ -1,0 +1,1 @@
+This is just a toy example making use of vcpkg as a toolchain for cmake.

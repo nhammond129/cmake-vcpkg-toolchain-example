@@ -12,7 +12,23 @@ int main() {
 	if (SDL_Init(SDL_INIT_EVERYTHING)) return 1;
 	if (SDL_CreateWindowAndRenderer(WIDTH, HEIGHT, SDL_FLAGS, &window, &renderer)) return 1;
 
-	while(true) {
+	bool running = true;
+	SDL_Event event;
+	while(running) {
+		while(SDL_PollEvent(&event) != 0) {
+			switch (event.type) {
+				case SDL_QUIT:
+					running = false;
+					break;
+				case SDL_KEYDOWN:
+					std::cout << "SDL_KEYDOWN: " << event.key.keysym.sym << std::endl;
+					break;
+				case SDL_KEYUP:
+					std::cout << "SDL_KEYUP: " << event.key.keysym.sym << std::endl;
+					break;
+			}
+		}
+
 		SDL_SetRenderDrawColor(renderer, 20, 20, 20, SDL_ALPHA_OPAQUE);
 		SDL_RenderClear(renderer);
 
